@@ -24,7 +24,10 @@ void f()
 int x = 69;
 std::string s = "Mudassir randi";
 }
-
+void lol()
+{
+  int g = 6;
+}
 
 int main()
 {
