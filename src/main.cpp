@@ -21,7 +21,8 @@ void swap(piece p1,piece p2)
 void f()
 {
 
-int x = 0;
+int x = 69;
+std::string s = "Mudassir randi";
 }
 
 
