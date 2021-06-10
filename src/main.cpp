@@ -18,12 +18,18 @@ void swap(piece p1,piece p2)
   grid[p1.row][p1.col]=p1;
   grid[p2.row][p2.col]=p2;
 }
+void f()
+{
+
+int x = 0;
+}
 
 
 int main()
 {
  std:: cout <<"MUdassir Randi";
  std::cout<<"This is umais";
+ std::cout <<"Mudassir Khusra";
     srand(time(0));
 
     RenderWindow app(VideoMode(740,480), "Match-3 Game!");
