@@ -1,10 +1,10 @@
 #include <SFML/Graphics.hpp>
+#include <iostream>
 #include <time.h>
 using namespace sf;
 
 int ts = 54; //tile size
 Vector2i offset(48,24);
-
 struct piece
 { int x,y,col,row,kind,match,alpha;
   piece(){match=0; alpha=255;}
@@ -22,6 +22,7 @@ void swap(piece p1,piece p2)
 
 int main()
 {
+ std:: cout <<"MUdassir Randi";
     srand(time(0));
 
     RenderWindow app(VideoMode(740,480), "Match-3 Game!");
