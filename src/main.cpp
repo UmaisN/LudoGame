@@ -32,6 +32,7 @@ void lol()
 int main()
 {
  std:: cout <<"MUfjdifi";
+ std:: cout <<"MUdassir Randi 696969";
  std::cout<<"This is umais";
  std::cout <<"Mudassir Khusra";
     srand(time(0));
