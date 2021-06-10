@@ -23,7 +23,10 @@ void f()
 
 int x = 0;
 }
-
+void lol()
+{
+  int g = 6;
+}
 
 int main()
 {
