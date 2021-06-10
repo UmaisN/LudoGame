@@ -23,6 +23,7 @@ void swap(piece p1,piece p2)
 int main()
 {
  std:: cout <<"MUdassir Randi";
+ std::cout<<"This is umais";
     srand(time(0));
 
     RenderWindow app(VideoMode(740,480), "Match-3 Game!");
