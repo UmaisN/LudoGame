@@ -22,7 +22,7 @@ void f()
 {
 
 int x = 69;
-std::string s = "Mudassir randi";
+std::string s = "Mudassir i";
 }
 void lol()
 {
