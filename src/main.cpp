@@ -19,11 +19,9 @@ void swap(piece p1,piece p2)
   grid[p2.row][p2.col]=p2;
 }
 
-
 int main()
 {
     srand(time(0));
-
     RenderWindow app(VideoMode(740,480), "Match-3 Game!");
     app.setFramerateLimit(60);
 
