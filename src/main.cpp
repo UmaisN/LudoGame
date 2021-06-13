@@ -1,12 +1,57 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <time.h>
+#include <vector>
 using namespace sf;
+
+
+
 
 int main()
 {
-   RenderWindow app(VideoMode(720,720), "Ludo Game");
-    app.setFramerateLimit(60);
+   RenderWindow window(VideoMode(720,720), "Ludo Game");
+    window.setFramerateLimit(60);
+
+    //YELLOW TOKENS LOCATIONS
+ float Y1x=25;
+ float Y1y=570;
+ float Y2x=25;
+ float Y2y=630;
+ float Y3x=90;
+ float Y3y=630;
+ float Y4x=90;
+ float Y4y=570;
+ //RED TOKENS LOCATIONS
+
+ float R1x=565;
+ float R1y=25;
+ float R2x=565;
+ float R2y=85;
+ float R3y=25;
+ float R3x=630;
+ float R4y=85;
+ float R4x=630;
+
+ //BLUE TOKEN LOCATIONS
+ float B1x=25;
+ float B1y=25;
+ float B2x=25;
+ float B2y=85;
+ float B3x=90;
+ float B3y=25;
+ float B4x=90;
+ float B4y=85;
+ //GREEN TOKEN LOCATIONS;
+ float G1x=565;
+ float G1y=570;
+ float G2x=565;
+ float G2y=630;
+ float G3x=630;
+ float G3y=630;
+ float G4x=630;
+ float G4y=570;
+//ARRAY STORING THESE LOCATIONS
+float StartingLocations[4][4][2];
   //THE 4 TOKENS FOR YELLOW TEAM
   
   Texture TokY1;
@@ -67,57 +112,65 @@ int main()
     Texture bg;
     bg.loadFromFile("images/board.png",sf::IntRect(15,15,720,720));
     Sprite background(bg);
-    while (app.isOpen())
+    while (window.isOpen())
     {
       Event e;
-      while (app.pollEvent(e))
+      while (window.pollEvent(e))
       {
           if (e.type == Event::Closed)
-            app.close();
+            window.close();
  }
- app.draw(background);
+ window.draw(background);
  //DRAWING YELLOW TEAMS TOKENS
- YellowToken1.setPosition(25.f, 570.f);
- app.draw(YellowToken1);
-  YellowToken2.setPosition(25.f, 630.f);
- app.draw(YellowToken2);
-  YellowToken2.setPosition(90.f, 630.f);
- app.draw(YellowToken2);
-  YellowToken2.setPosition(90.f, 570.f);
- app.draw(YellowToken2);
+ YellowToken1.setPosition(Y1x, Y1y);
+ window.draw(YellowToken1);
+  YellowToken2.setPosition(Y2x, Y2y);
+ window.draw(YellowToken2);
+  YellowToken3.setPosition(Y3x, Y3y);
+ window.draw(YellowToken3);
+  YellowToken4.setPosition(Y4x, Y4y);
+ window.draw(YellowToken4);
  //----------------------------------//
  //DRAWING YELLOW TEAMS TOKENS
- BlueToken1.setPosition(25.f, 25.f);
- app.draw(BlueToken1);
-  BlueToken2.setPosition(25.f, 85.f);
- app.draw(BlueToken2);
-  BlueToken2.setPosition(90.f, 25.f);
- app.draw(BlueToken2);
-  BlueToken2.setPosition(90.f, 85.f);
- app.draw(BlueToken2);
+ BlueToken1.setPosition(B1x, B1y);
+ window.draw(BlueToken1);
+  BlueToken2.setPosition(B2x, B2y);
+ window.draw(BlueToken2);
+  BlueToken3.setPosition(B3x, B3y);
+ window.draw(BlueToken3);
+  BlueToken4.setPosition(B4x, B4y);
+ window.draw(BlueToken4);
  //----------------------------------//
   //DRAWING RED TEAMS TOKENS
- RedToken1.setPosition(565.f, 25.f);
- app.draw(RedToken1);
-  RedToken2.setPosition(565.f, 85.f);
- app.draw(RedToken2);
-  RedToken2.setPosition(630.f, 25.f);
- app.draw(RedToken2);
-  RedToken2.setPosition(630.f, 85.f);
- app.draw(RedToken2);
+ RedToken1.setPosition(R1x, R1y);
+ window.draw(RedToken1);
+  RedToken2.setPosition(R2x, R2y);
+ window.draw(RedToken2);
+  RedToken3.setPosition(R3x, R3y);
+ window.draw(RedToken3);
+  RedToken4.setPosition(R4x, R4y);
+ window.draw(RedToken4);
  //----------------------------------//
   //----------------------------------//
   //DRAWING GREEN TEAMS TOKENS
- GreenToken1.setPosition(565.f, 570.f);
- app.draw(GreenToken1);
-  GreenToken2.setPosition(565.f, 630.f);
- app.draw(GreenToken2);
-  GreenToken2.setPosition(630.f, 630.f);
- app.draw(GreenToken2);
-  GreenToken2.setPosition(630.f, 570.f);
- app.draw(GreenToken2);
+// GreenToken1.setPosition(G1x, G1y);
+ window.draw(GreenToken1);
+  GreenToken2.setPosition(G2x, G2y);
+ window.draw(GreenToken2);
+  GreenToken3.setPosition(G3x, G3y);
+ window.draw(GreenToken3);
+  GreenToken4.setPosition(G4x, G4y);
+ window.draw(GreenToken4);
  //----------------------------------//
-      app.display();
-    }
+      window.display();
+
+      if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+      {
+        sf::Vector2i mousePos = sf::Mouse::getPosition(window);
+        GreenToken1.setPosition((float)mousePos.x,static_cast<float>(mousePos.y));
+        std::cout <<"JIFND";
+;
+      }
+      }
     return 0;
 }
