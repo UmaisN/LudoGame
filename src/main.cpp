@@ -533,11 +533,11 @@ int main()
     */
     //End Display Red Token//
 
+    /*
     //------------Blue Token-----------//
     float BlueArray[45][2];
     float StartingX = 26;
     float StartingY = 267;
-        //4
     for (int i = 0; i < 4; i++)
     {
       BlueArray[i][0] = StartingX;
@@ -630,8 +630,104 @@ int main()
       window.display();
     }
     //End Display Blue Token//
+    */
 
+    //------------Green Token-----------4:11//
+    float GreenArray[45][2];
+    float StartingX = 628;
+    float StartingY = 387;
+    for (int i = 0; i < 4; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 4; i < 8; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 8; i < 10; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 10; i < 14; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 14; i < 18; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 18; i < 20; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 20; i < 24; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 24; i < 28; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 28; i < 30; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 30; i < 34; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 34; i < 38; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 38; i < 39; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 39; i < 45; i++)
+    {
+      GreenArray[i][0] = StartingX;
+      GreenArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    //-----------END GREEN TOKEN-------------//
 
+    //Display Green Token//
+    G.GreenToken1.setPosition(628,387);
+    window.draw(G.GreenToken1);
+    window.display();
+    for (int i = 0; i < 45; i++)
+    {
+      G.GreenToken1.setPosition(GreenArray[i][0], GreenArray[i][1]);
+      sleep(T1);
+      window.draw(G.GreenToken1);
+      window.display();
+    }
+    //End Display Green Token//
 
     ///////////DISPLAY////////
     window.display();
