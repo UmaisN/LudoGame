@@ -279,7 +279,15 @@ int main()
       {
         window.draw(D.R);
       }
+      if (e.type == Event::MouseButtonPressed)
+      {
+        if (e.key.code == Mouse::Left)
+        {
+          std::cout << "(" << sf::Mouse::getPosition(window).x << "," << sf::Mouse::getPosition(window).y << ")" << std::endl;
+        }
+      }
     }
+
     //DRAWING THE TOKENS__________//
     window.draw(background);
     window.draw(Y.YellowToken1);
@@ -309,7 +317,321 @@ int main()
     window.draw(G.GreenToken4);
     //----------------------------------//
 
-    //----------------------------//
+    /*
+    //-------Yellow Token----------//
+    float YellowArray[45][2];
+    float StartingX = 270;
+    float StartingY = 630;
+    //1
+    for (int i = 0; i < 4; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    //2
+    for (int i = 4; i < 8; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    //3
+    for (int i = 8; i < 10; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    //---------ROUND 2------------//
+    //4
+    for (int i = 10; i < 14; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    //5
+    for (int i = 14; i < 18; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    //6
+    for (int i = 18; i < 20; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    //7
+    //---------ROUND #-----------//
+    for (int i = 20; i < 24; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    //8
+    for (int i = 24; i < 28; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    //9
+    for (int i = 28; i < 30; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    //10
+    for (int i = 30; i < 34; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    //11
+    for (int i = 34; i < 38; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    //12
+    for (int i = 38; i < 39; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    //13
+    for (int i = 39; i < 45; i++)
+    {
+      YellowArray[i][0] = StartingX;
+      YellowArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    //14
+    for (int i = 0; i < 45; i++)
+    {
+      std::cout << YellowArray[i][0] << "," << YellowArray[i][1] << "||";
+    }
+
+    //FUNCTION TO DISPLAY TOKEN ON ALL THE VALUES
+    Y.YellowToken1.setPosition(270, 630);
+    for (int i = 0; i < 45; i++)
+    {
+      Y.YellowToken1.setPosition(YellowArray[i][0], YellowArray[i][1]);
+      sleep(T1);
+      window.draw(Y.YellowToken1);
+      window.display();
+    }
+    //////////end///////////////////
+    */
+
+    /*
+   //----------Red Token------------//
+    float RedArray[45][2];
+    float StartingX = 388;
+    float StartingY = 27;
+    for (int i = 0; i < 4; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 4; i < 8; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 8; i < 10; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 10; i < 14; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 14; i < 18; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 18; i < 20; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 20; i < 24; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 24; i < 28; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 28; i < 30; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 30; i < 34; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 34; i < 38; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 38; i < 39; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 39; i < 45; i++)
+    {
+      RedArray[i][0] = StartingX;
+      RedArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    //-----------END RED TOKEN-------------//
+
+    //Display Red Token//
+
+    R.RedToken1.setPosition(388, 27);
+    window.draw(R.RedToken1);
+    window.display();
+    for (int i = 0; i < 45; i++)
+    {
+      R.RedToken1.setPosition(RedArray[i][0], RedArray[i][1]);
+      sleep(T1);
+      window.draw(R.RedToken1);
+      window.display();
+    }
+    */
+    //End Display Red Token//
+
+    //------------Blue Token-----------//
+    float BlueArray[45][2];
+    float StartingX = 26;
+    float StartingY = 267;
+        //4
+    for (int i = 0; i < 4; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 4; i < 8; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 8; i < 10; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 10; i < 14; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 14; i < 18; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 18; i < 20; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 20; i < 24; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 24; i < 28; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 28; i < 30; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 30; i < 34; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 34; i < 38; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 38; i < 39; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 39; i < 45; i++)
+    {
+      BlueArray[i][0] = StartingX;
+      BlueArray[i][1] = StartingY;
+      StartingX += 60;
+    }
+    //-----------END BLUE TOKEN-------------//
+
+    //Display Blue Token//
+    B.BlueToken1.setPosition(26, 267);
+    window.draw(B.BlueToken1);
+    window.display();
+    for (int i = 0; i < 45; i++)
+    {
+      B.BlueToken1.setPosition(BlueArray[i][0], BlueArray[i][1]);
+      sleep(T1);
+      window.draw(B.BlueToken1);
+      window.display();
+    }
+    //End Display Blue Token//
+
+
 
     ///////////DISPLAY////////
     window.display();
@@ -317,6 +639,6 @@ int main()
   return 0;
 }
 
-void *DiceRoll(void *arg){
-  
+void *DiceRoll(void *arg)
+{
 }
