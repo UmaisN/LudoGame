@@ -1,3 +1,12 @@
+/*
+  Ludo Game, Semester 4 OS Project
+  Done by Umais Nisar and Salar Abbas
+  i190573, i190490
+  Section C
+*/
+
+
+
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <time.h>
@@ -14,7 +23,10 @@
 
 using namespace sf;
 
-sem_t sem;
+sem_t players;
+RenderWindow app;
+
+void *masterThread(void* arg);
 
 //GLOBALS//
 int rollValue;
@@ -1053,7 +1065,12 @@ int main()
   int Turn = 10; //DECIDES WHOSE TURN IT IS IN THE DICE ROLLING
   sf::Time T1 = sf::seconds(0.2f);
   RenderWindow window(VideoMode(900, 900), "Ludo Game");
+  masterThread(&window);
   window.setFramerateLimit(60);
+
+  //4 players
+  //sem_init(&players,0,4);
+  pthread_t roller;
   //DECLARING CLASS VARIABLES//
   Dice D;
   PlayerRed PR;
@@ -1364,3 +1381,40 @@ int main()
   }
   return 0;
 }
+
+void *temp(void *arg){
+  // 0 0 1 1 
+  //start an sem (sem wait for dice roll)
+  //sem wait if dice roll has happened 
+  //sem post dice roll
+  //sem wait board
+  //sem wait moved
+  //sem post board
+
+  //main
+  //sem post dice roll has happened in place where dice roll happens
+  //sem post if a token moves
+
+  sem_wait(&players);
+}
+
+void *masterThread(void* arg){
+  int z=0;
+  sem_init(&players,0,4);
+  pthread_t player[4];
+  for (int i =0;i<4;i++){
+    pthread_create(&player[i],NULL,&temp,(void *)z);
+  }
+  for (int i=0;i<4;i++){
+    pthread_join(player[i],NULL);
+  }
+  pthread_exit(0);
+}
+
+  //init sems here
+  //pass render Window
+  //create 4 threads for each player
+  //pass each thread an integer
+
+  //init sems here
+  //Join 4 threads
