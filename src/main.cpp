@@ -31,6 +31,18 @@ public:
   float Y3y = 630;
   float Y4x = 90;
   float Y4y = 570;
+  float YellowArray1[45][2];
+  float YellowArray2[45][2];
+  float YellowArray3[45][2];
+  float YellowArray4[45][2];
+  float StartingX = 270;
+  float StartingY = 630;
+  int Token1Location = 0;
+  int Token2Location = 0;
+  int Token3Location = 0;
+  int Token4Location = 0;
+  bool TokenWon[4] = {0, 0, 0, 0};
+
   Texture TokY1;
   Texture TokY2;
   Texture TokY3;
@@ -55,6 +67,180 @@ public:
     YellowToken2.setPosition(Y1x, Y1y);
     YellowToken3.setPosition(Y3x, Y3y);
     YellowToken4.setPosition(Y4x, Y4y);
+
+    //1
+    for (int i = 0; i < 4; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    //2
+    for (int i = 4; i < 8; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    //3
+    for (int i = 8; i < 10; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    //---------ROUND 2------------//
+    //4
+    for (int i = 10; i < 14; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    //5
+    for (int i = 14; i < 18; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    //6
+    for (int i = 18; i < 20; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    //7
+    //---------ROUND #-----------//
+    for (int i = 20; i < 24; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    //8
+    for (int i = 24; i < 28; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    //9
+    for (int i = 28; i < 30; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    //10
+    for (int i = 30; i < 34; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    //11
+    for (int i = 34; i < 38; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    //12
+    for (int i = 38; i < 39; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    //13
+    for (int i = 39; i < 45; i++)
+    {
+      YellowArray1[i][0] = StartingX;
+      YellowArray1[i][1] = StartingY;
+      YellowArray2[i][0] = StartingX;
+      YellowArray2[i][1] = StartingY;
+      YellowArray3[i][0] = StartingX;
+      YellowArray3[i][1] = StartingY;
+      YellowArray4[i][0] = StartingX;
+      YellowArray4[i][1] = StartingY;
+
+      StartingY -= 60;
+    }
+    //14
   }
 };
 
@@ -62,6 +248,8 @@ public:
 class RedTeam
 {
 public:
+  float StartingX = 388;
+  float StartingY = 27;
   float R1x = 565;
   float R1y = 25;
   float R2x = 565;
@@ -70,6 +258,15 @@ public:
   float R3x = 630;
   float R4y = 85;
   float R4x = 630;
+  float RedArray4[45][2];
+  float RedArray1[45][2];
+  float RedArray2[45][2];
+  float RedArray3[45][2];
+  int Token1Location = 0;
+  int Token2Location = 0;
+  int Token3Location = 0;
+  int Token4Location = 0;
+  bool TokenWon[4] = {0, 0, 0, 0};
   Texture TokR1;
   Texture TokR2;
   Texture TokR3;
@@ -94,6 +291,163 @@ public:
     RedToken2.setPosition(R1x, R1y);
     RedToken3.setPosition(R3x, R3y);
     RedToken4.setPosition(R4x, R4y);
+
+    for (int i = 0; i < 4; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 4; i < 8; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 8; i < 10; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 10; i < 14; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 14; i < 18; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 18; i < 20; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 20; i < 24; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 24; i < 28; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 28; i < 30; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 30; i < 34; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 34; i < 38; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 38; i < 39; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 39; i < 45; i++)
+    {
+      RedArray1[i][0] = StartingX;
+      RedArray1[i][1] = StartingY;
+      RedArray2[i][0] = StartingX;
+      RedArray2[i][1] = StartingY;
+      RedArray3[i][0] = StartingX;
+      RedArray3[i][1] = StartingY;
+      RedArray4[i][0] = StartingX;
+      RedArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
   }
 };
 
@@ -110,6 +464,17 @@ public:
   float B3y = 25;
   float B4x = 90;
   float B4y = 85;
+  int Token1Location = 0;
+  int Token2Location = 0;
+  int Token3Location = 0;
+  int Token4Location = 0;
+  float BlueArray1[45][2];
+  float BlueArray2[45][2];
+  float BlueArray3[45][2];
+  float BlueArray4[45][2];
+  float StartingX = 26;
+  float StartingY = 267;
+  bool TokenWon[4] = {0, 0, 0, 0};
   Texture TokB1;
   Texture TokB2;
   Texture TokB3;
@@ -134,6 +499,162 @@ public:
     BlueToken2.setPosition(B2x, B2y);
     BlueToken3.setPosition(B3x, B3y);
     BlueToken4.setPosition(B4x, B4y);
+    for (int i = 0; i < 4; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 4; i < 8; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 8; i < 10; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 10; i < 14; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 14; i < 18; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 18; i < 20; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 20; i < 24; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 24; i < 28; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 28; i < 30; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 30; i < 34; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 34; i < 38; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 38; i < 39; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 39; i < 45; i++)
+    {
+      BlueArray1[i][0] = StartingX;
+      BlueArray1[i][1] = StartingY;
+      BlueArray2[i][0] = StartingX;
+      BlueArray2[i][1] = StartingY;
+      BlueArray3[i][0] = StartingX;
+      BlueArray3[i][1] = StartingY;
+      BlueArray4[i][0] = StartingX;
+      BlueArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
   }
 };
 //-----______GREEN TEAM CLASS------____________//
@@ -152,6 +673,17 @@ public:
   Texture TokG2;
   Texture TokG3;
   Texture TokG4;
+  int Token1Location = 0;
+  int Token2Location = 0;
+  int Token3Location = 0;
+  int Token4Location = 0;
+  float StartingX = 628;
+  float StartingY = 387;
+  float GreenArray1[45][2];
+  float GreenArray2[45][2];
+  float GreenArray3[45][2];
+  float GreenArray4[45][2];
+  bool TokenWon[4] = {0, 0, 0, 0};
   Sprite GreenToken1;
   Sprite GreenToken2;
   Sprite GreenToken3;
@@ -172,6 +704,162 @@ public:
     GreenToken4.setPosition(G4x, G4y);
     GreenToken3.setPosition(G3x, G3y);
     GreenToken2.setPosition(G2x, G2y);
+    for (int i = 0; i < 4; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 4; i < 8; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 8; i < 10; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 10; i < 14; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 14; i < 18; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
+    for (int i = 18; i < 20; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 20; i < 24; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 24; i < 28; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingY -= 60;
+    }
+    for (int i = 28; i < 30; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 30; i < 34; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 34; i < 38; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingX += 60;
+    }
+    for (int i = 38; i < 39; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingY += 60;
+    }
+    for (int i = 39; i < 45; i++)
+    {
+      GreenArray1[i][0] = StartingX;
+      GreenArray1[i][1] = StartingY;
+      GreenArray2[i][0] = StartingX;
+      GreenArray2[i][1] = StartingY;
+      GreenArray3[i][0] = StartingX;
+      GreenArray3[i][1] = StartingY;
+      GreenArray4[i][0] = StartingX;
+      GreenArray4[i][1] = StartingY;
+      StartingX -= 60;
+    }
   }
 };
 //______________THE DICE CLASS________________//
@@ -216,7 +904,6 @@ public:
     DS[4].setPosition(RDAx, RDAy);
     DS[5].setPosition(RDAx, RDAy);
   }
-
   int RollTheDice()
   {
     int RandomNumber = rand();
@@ -225,21 +912,155 @@ public:
     return RandomNumber;
   }
 };
+//CLASS FOR PLAYER OF RED TEAM/___________________________??
+class PlayerRed
+{
+public:
+  RedTeam Team;
+  int score = 0;
+  std::string name = "";
+
+public:
+  PlayerRed()
+  {
+    name = "red dude";
+  }
+  void MoveToken(int TokenNumber, int Value)
+  {
+    if (TokenNumber == 1)
+    {
+      Team.Token1Location += Value;
+    }
+    if (TokenNumber == 2)
+    {
+      Team.Token2Location += Value;
+    }
+    if (TokenNumber == 3)
+    {
+      Team.Token3Location += Value;
+    }
+    if (TokenNumber == 4)
+    {
+      Team.Token4Location += Value;
+    }
+  }
+};
+//CLASS FOR BLUE TEAM PLAYER_______________________//
+class PlayerBlue
+{
+public:
+  BlueTeam Team;
+  int score = 0;
+  std::string name = "";
+
+public:
+  PlayerBlue()
+  {
+    name = "blue dude";
+  }
+  void MoveToken(int TokenNumber, int Value)
+  {
+    if (TokenNumber == 1)
+    {
+      Team.Token1Location += Value;
+    }
+    if (TokenNumber == 2)
+    {
+      Team.Token2Location += Value;
+    }
+    if (TokenNumber == 3)
+    {
+      Team.Token3Location += Value;
+    }
+    if (TokenNumber == 4)
+    {
+      Team.Token4Location += Value;
+    }
+  }
+};
+//GREEN TEAM PLAYER_____________________//
+class PlayerGreen
+{
+public:
+  GreenTeam Team;
+  int score = 0;
+  std::string name = "";
+
+public:
+  PlayerGreen()
+  {
+    name = "Green dude";
+  }
+  void MoveToken(int TokenNumber, int Value)
+  {
+    if (TokenNumber == 1)
+    {
+      Team.Token1Location += Value;
+    }
+    if (TokenNumber == 2)
+    {
+      Team.Token2Location += Value;
+    }
+    if (TokenNumber == 3)
+    {
+      Team.Token3Location += Value;
+    }
+    if (TokenNumber == 4)
+    {
+      Team.Token4Location += Value;
+    }
+  }
+};
+//BLUE TEAM PLAYER________________//
+class PlayerYellow
+{
+public:
+  YellowTeam Team;
+  int score = 0;
+  std::string name = "";
+
+public:
+  PlayerYellow()
+  {
+    name = "Yellow dude";
+  }
+  void MoveToken(int TokenNumber, int Value)
+  {
+    if (TokenNumber == 1)
+    {
+      Team.Token1Location += Value;
+    }
+    if (TokenNumber == 2)
+    {
+      Team.Token2Location += Value;
+    }
+    if (TokenNumber == 3)
+    {
+      Team.Token3Location += Value;
+    }
+    if (TokenNumber == 4)
+    {
+      Team.Token4Location += Value;
+    }
+  }
+};
 
 //_______________________THE_______________________//
 //______________________MAIN________________________//
 //_____________________FUNCTION_____________________//
 int main()
 {
+  int Turn = 10; //DECIDES WHOSE TURN IT IS IN THE DICE ROLLING
   sf::Time T1 = sf::seconds(0.2f);
   RenderWindow window(VideoMode(900, 900), "Ludo Game");
   window.setFramerateLimit(60);
   //DECLARING CLASS VARIABLES//
-  GreenTeam G;
-  BlueTeam B;
-  RedTeam R;
-  YellowTeam Y;
   Dice D;
+  PlayerRed PR;
+  PlayerGreen PG;
+  PlayerBlue PB;
+  PlayerYellow PY;
+
   //_______________//
   Texture bg;
   bg.loadFromFile("images/board.png", sf::IntRect(15, 15, 720, 720));
@@ -261,13 +1082,207 @@ int main()
         {
           if (D.R.getGlobalBounds().contains(translated_pos))
           {
+            static int yc = 0;
+            static int rc = 0;
+            static int bc = 0;
+            static int gc = 0;
+
+            int TokenHas = 0;
             window.draw(D.RP);
             int j;
             srand(time(NULL));
             j = rand() % 6;
             rollValue = j + 1;
-            std::cout << rollValue << std::endl;
+            std::cout << "Roll Value: " << rollValue << std::endl;
+            //YELLOW MOVEMENT
+            if (Turn % 4 == 0)
+            {
+              if (rollValue == 6 && yc == 0)
+              {
+                yc++;
+                j = rand() % 6;
+                rollValue = j + 1;
+                std::cout << "Roll Value: " << rollValue << std::endl;
+                PY.MoveToken(1, rollValue);
+                if (PY.Team.Token1Location >= 45) //CHECK IF TOKEN HAS COMPLETED PATH
+                {
+                  PY.Team.Token1Location -= rollValue;
+                }
+                if (PY.Team.TokenWon[0] == false)
+                {
+                  if (PY.Team.Token1Location == 44)
+                  {
+                    PY.Team.TokenWon[0] = true; //
+                  }
+
+                  PY.Team.YellowToken1.setPosition(PY.Team.YellowArray1[PY.Team.Token1Location][0], PY.Team.YellowArray1[PY.Team.Token1Location][1]);
+                  std::cout << PY.Team.Token1Location << std::endl;
+                  window.draw(PY.Team.YellowToken1);
+                }
+              }
+              else if (yc > 0)
+              {
+                PY.MoveToken(1, rollValue);
+                if (PY.Team.Token1Location >= 45) //CHECK IF TOKEN HAS COMPLETED PATH
+                {
+                  PY.Team.Token1Location -= rollValue;
+                }
+                if (PY.Team.TokenWon[0] == false)
+                {
+                  if (PY.Team.Token1Location == 44)
+                  {
+                    PY.Team.TokenWon[0] = true; //
+                  }
+
+                  PY.Team.YellowToken1.setPosition(PY.Team.YellowArray1[PY.Team.Token1Location][0], PY.Team.YellowArray1[PY.Team.Token1Location][1]);
+                  std::cout << PY.Team.Token1Location << std::endl;
+                  window.draw(PY.Team.YellowToken1);
+                }
+              }
+            }
+            //------------------YELLOW MOVEMENT ENDS HERE_______________________//
+
+            //RED MOVEMENT
+            if (Turn % 4 == 1)
+            {
+              if (rollValue == 6 && rc == 0)
+              {
+                rc++;
+                j = rand() % 6;
+                rollValue = j + 1;
+                std::cout << "Roll Value: " << rollValue << std::endl;
+                PR.MoveToken(1, rollValue);
+                if (PR.Team.Token1Location >= 45) //CHECK IF TOKEN HAS COMPLETED PATH
+                {
+                  PR.Team.Token1Location -= rollValue;
+                }
+                if (PR.Team.TokenWon[0] == false)
+                {
+                  if (PR.Team.Token1Location == 44)
+                  {
+                    PR.Team.TokenWon[0] = true; //
+                  }
+                  PR.Team.RedToken1.setPosition(PR.Team.RedArray1[PR.Team.Token1Location][0], PR.Team.RedArray1[PR.Team.Token1Location][1]);
+                  std::cout << PR.Team.Token1Location << std::endl;
+                  window.draw(PR.Team.RedToken1);
+                }
+              }
+              else if (rc > 0)
+              {
+                PR.MoveToken(1, rollValue);
+                if (PR.Team.Token1Location >= 45) //CHECK IF TOKEN HAS COMPLETED PATH
+                {
+                  PR.Team.Token1Location -= rollValue;
+                }
+                if (PR.Team.TokenWon[0] == false)
+                {
+                  if (PR.Team.Token1Location == 44)
+                  {
+                    PR.Team.TokenWon[0] = true; //
+                  }
+                  PR.Team.RedToken1.setPosition(PR.Team.RedArray1[PR.Team.Token1Location][0], PR.Team.RedArray1[PR.Team.Token1Location][1]);
+                  std::cout << PR.Team.Token1Location << std::endl;
+                  window.draw(PR.Team.RedToken1);
+                }
+              }
+            }
+            //____________RED MOVEMENT ENDS HERE_____________//
+
+            //GREEN MOVEMENT
+            if (Turn % 4 == 2)
+            {
+              if (rollValue == 6 && gc == 0)
+              {
+                gc++;
+                j = rand() % 6;
+                rollValue = j + 1;
+                std::cout << "Roll Value: " << rollValue << std::endl;
+                PG.MoveToken(1, rollValue);
+                if (PG.Team.Token1Location >= 45) //CHECK IF TOKEN HAS COMPLETED PATH
+                {
+                  PG.Team.Token1Location -= rollValue;
+                }
+                if (PG.Team.TokenWon[0] == false)
+                {
+                  if (PG.Team.Token1Location == 44)
+                  {
+                    PG.Team.TokenWon[0] = true; //
+                  }
+                  PG.Team.GreenToken1.setPosition(PG.Team.GreenArray3[PG.Team.Token1Location][0], PG.Team.GreenArray3[PG.Team.Token1Location][1]);
+                  std::cout << PG.Team.Token1Location << std::endl;
+                  window.draw(PG.Team.GreenToken1);
+                }
+              }
+              else if (gc > 0)
+              {
+                PG.MoveToken(1, rollValue);
+                j = rand() % 6;
+                rollValue = j + 1;
+                std::cout << "Roll Value: " << rollValue << std::endl;
+                if (PG.Team.Token1Location >= 45) //CHECK IF TOKEN HAS COMPLETED PATH
+                {
+                  PG.Team.Token1Location -= rollValue;
+                }
+                if (PG.Team.TokenWon[0] == false)
+                {
+                  if (PG.Team.Token1Location == 44)
+                  {
+                    PG.Team.TokenWon[0] = true; //
+                  }
+                  PG.Team.GreenToken1.setPosition(PG.Team.GreenArray3[PG.Team.Token1Location][0], PG.Team.GreenArray3[PG.Team.Token1Location][1]);
+                  std::cout << PG.Team.Token1Location << std::endl;
+                  window.draw(PG.Team.GreenToken1);
+                }
+              }
+            }
+            //_______________GREEN MOVEMENT ENDS HERE_________//
+
+            //BLUE MOVEMENT
+            if (Turn % 4 == 3)
+            {
+              if (rollValue == 6 && bc == 0)
+              {
+                bc++;
+                PB.MoveToken(1, rollValue);
+                if (PB.Team.Token1Location >= 45) //CHECK IF TOKEN HAS COMPLETED PATH
+                {
+                  PB.Team.Token1Location -= rollValue;
+                }
+                if (PB.Team.TokenWon[0] == false) //IF IT IS TRUE, MEANS TOKEN HAS WON SO IT WONT GO THROUGH
+                {
+                  if (PG.Team.Token1Location == 44)
+                  {
+                    PB.Team.TokenWon[0] = true; //
+                  }
+
+                  PB.Team.BlueToken1.setPosition(PB.Team.BlueArray4[PB.Team.Token1Location][0], PB.Team.BlueArray4[PB.Team.Token1Location][1]);
+                  std::cout << PB.Team.Token1Location << std::endl;
+                  window.draw(PB.Team.BlueToken1);
+                }
+              }
+              else if (bc>0){
+                PB.MoveToken(1, rollValue);
+                if (PB.Team.Token1Location >= 45) //CHECK IF TOKEN HAS COMPLETED PATH
+                {
+                  PB.Team.Token1Location -= rollValue;
+                }
+                if (PB.Team.TokenWon[0] == false) //IF IT IS TRUE, MEANS TOKEN HAS WON SO IT WONT GO THROUGH
+                {
+                  if (PG.Team.Token1Location == 44)
+                  {
+                    PB.Team.TokenWon[0] = true; //
+                  }
+
+                  PB.Team.BlueToken1.setPosition(PB.Team.BlueArray4[PB.Team.Token1Location][0], PB.Team.BlueArray4[PB.Team.Token1Location][1]);
+                  std::cout << PB.Team.Token1Location << std::endl;
+                  window.draw(PB.Team.BlueToken1);
+                }
+              }
+            }
+            //_____________BLUE MOVEMENT ENDS HERE___________//
+            Turn++;
             window.draw(D.DS[j]);
+            window.display();
           }
           else
           {
@@ -279,6 +1294,7 @@ int main()
       {
         window.draw(D.R);
       }
+      /*
       if (e.type == Event::MouseButtonPressed)
       {
         if (e.key.code == Mouse::Left)
@@ -286,455 +1302,65 @@ int main()
           std::cout << "(" << sf::Mouse::getPosition(window).x << "," << sf::Mouse::getPosition(window).y << ")" << std::endl;
         }
       }
+      */
     }
 
     //DRAWING THE TOKENS__________//
     window.draw(background);
-    window.draw(Y.YellowToken1);
-    window.draw(Y.YellowToken2);
-    window.draw(Y.YellowToken3);
-    window.draw(Y.YellowToken4);
+    if (PY.Team.TokenWon[0] == true)
+    {
+    }
+    else
+    {
+      window.draw(PY.Team.YellowToken1);
+    }
+    if (PY.Team.TokenWon[1] == true)
+    {
+    }
+    else
+    {
+      window.draw(PY.Team.YellowToken2);
+    }
+    if (PY.Team.TokenWon[2] == true)
+    {
+    }
+    else
+    {
+      window.draw(PY.Team.YellowToken3);
+    }
+    if (PY.Team.TokenWon[3] == true)
+    {
+    }
+    else
+    {
+      window.draw(PY.Team.YellowToken4);
+    }
+
     //----------------------------------//
     //DRAWING YELLOW TEAMS TOKENS
 
-    window.draw(B.BlueToken1);
-    window.draw(B.BlueToken2);
-    window.draw(B.BlueToken3);
-    window.draw(B.BlueToken4);
+    window.draw(PB.Team.BlueToken1);
+    window.draw(PB.Team.BlueToken2);
+    window.draw(PB.Team.BlueToken3);
+    window.draw(PB.Team.BlueToken4);
     //----------------------------------//
     //DRAWING RED TEAMS TOKENS
-    window.draw(R.RedToken1);
-    window.draw(R.RedToken2);
-    window.draw(R.RedToken3);
-    window.draw(R.RedToken4);
+    window.draw(PR.Team.RedToken1);
+    window.draw(PR.Team.RedToken2);
+    window.draw(PR.Team.RedToken3);
+    window.draw(PR.Team.RedToken4);
     //----------------------------------//
     //----------------------------------//
     //DRAWING GREEN TEAMS TOKENS
 
-    window.draw(G.GreenToken1);
-    window.draw(G.GreenToken2);
-    window.draw(G.GreenToken3);
-    window.draw(G.GreenToken4);
+    window.draw(PG.Team.GreenToken1);
+    window.draw(PG.Team.GreenToken2);
+    window.draw(PG.Team.GreenToken3);
+    window.draw(PG.Team.GreenToken4);
     //----------------------------------//
-
-    /*
-    //-------Yellow Token----------//
-    float YellowArray[45][2];
-    float StartingX = 270;
-    float StartingY = 630;
-    //1
-    for (int i = 0; i < 4; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    //2
-    for (int i = 4; i < 8; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    //3
-    for (int i = 8; i < 10; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    //---------ROUND 2------------//
-    //4
-    for (int i = 10; i < 14; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    //5
-    for (int i = 14; i < 18; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    //6
-    for (int i = 18; i < 20; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    //7
-    //---------ROUND #-----------//
-    for (int i = 20; i < 24; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    //8
-    for (int i = 24; i < 28; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    //9
-    for (int i = 28; i < 30; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    //10
-    for (int i = 30; i < 34; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    //11
-    for (int i = 34; i < 38; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    //12
-    for (int i = 38; i < 39; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    //13
-    for (int i = 39; i < 45; i++)
-    {
-      YellowArray[i][0] = StartingX;
-      YellowArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    //14
-    for (int i = 0; i < 45; i++)
-    {
-      std::cout << YellowArray[i][0] << "," << YellowArray[i][1] << "||";
-    }
-
-    //FUNCTION TO DISPLAY TOKEN ON ALL THE VALUES
-    Y.YellowToken1.setPosition(270, 630);
-    for (int i = 0; i < 45; i++)
-    {
-      Y.YellowToken1.setPosition(YellowArray[i][0], YellowArray[i][1]);
-      sleep(T1);
-      window.draw(Y.YellowToken1);
-      window.display();
-    }
-    //////////end///////////////////
-    */
-
-    /*
-   //----------Red Token------------//
-    float RedArray[45][2];
-    float StartingX = 388;
-    float StartingY = 27;
-    for (int i = 0; i < 4; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    for (int i = 4; i < 8; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    for (int i = 8; i < 10; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    for (int i = 10; i < 14; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    for (int i = 14; i < 18; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    for (int i = 18; i < 20; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    for (int i = 20; i < 24; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    for (int i = 24; i < 28; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    for (int i = 28; i < 30; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    for (int i = 30; i < 34; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    for (int i = 34; i < 38; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    for (int i = 38; i < 39; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    for (int i = 39; i < 45; i++)
-    {
-      RedArray[i][0] = StartingX;
-      RedArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    //-----------END RED TOKEN-------------//
-
-    //Display Red Token//
-
-    R.RedToken1.setPosition(388, 27);
-    window.draw(R.RedToken1);
-    window.display();
-    for (int i = 0; i < 45; i++)
-    {
-      R.RedToken1.setPosition(RedArray[i][0], RedArray[i][1]);
-      sleep(T1);
-      window.draw(R.RedToken1);
-      window.display();
-    }
-    */
-    //End Display Red Token//
-
-    /*
-    //------------Blue Token-----------//
-    float BlueArray[45][2];
-    float StartingX = 26;
-    float StartingY = 267;
-    for (int i = 0; i < 4; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    for (int i = 4; i < 8; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    for (int i = 8; i < 10; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    for (int i = 10; i < 14; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    for (int i = 14; i < 18; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    for (int i = 18; i < 20; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    for (int i = 20; i < 24; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    for (int i = 24; i < 28; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    for (int i = 28; i < 30; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    for (int i = 30; i < 34; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    for (int i = 34; i < 38; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    for (int i = 38; i < 39; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    for (int i = 39; i < 45; i++)
-    {
-      BlueArray[i][0] = StartingX;
-      BlueArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    //-----------END BLUE TOKEN-------------//
-
-    //Display Blue Token//
-    B.BlueToken1.setPosition(26, 267);
-    window.draw(B.BlueToken1);
-    window.display();
-    for (int i = 0; i < 45; i++)
-    {
-      B.BlueToken1.setPosition(BlueArray[i][0], BlueArray[i][1]);
-      sleep(T1);
-      window.draw(B.BlueToken1);
-      window.display();
-    }
-    //End Display Blue Token//
-    */
-
-    //------------Green Token-----------4:11//
-    float GreenArray[45][2];
-    float StartingX = 628;
-    float StartingY = 387;
-    for (int i = 0; i < 4; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    for (int i = 4; i < 8; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    for (int i = 8; i < 10; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    for (int i = 10; i < 14; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    for (int i = 14; i < 18; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    for (int i = 18; i < 20; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    for (int i = 20; i < 24; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    for (int i = 24; i < 28; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingY -= 60;
-    }
-    for (int i = 28; i < 30; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    for (int i = 30; i < 34; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    for (int i = 34; i < 38; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingX += 60;
-    }
-    for (int i = 38; i < 39; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingY += 60;
-    }
-    for (int i = 39; i < 45; i++)
-    {
-      GreenArray[i][0] = StartingX;
-      GreenArray[i][1] = StartingY;
-      StartingX -= 60;
-    }
-    //-----------END GREEN TOKEN-------------//
-
-    //Display Green Token//
-    G.GreenToken1.setPosition(628,387);
-    window.draw(G.GreenToken1);
-    window.display();
-    for (int i = 0; i < 45; i++)
-    {
-      G.GreenToken1.setPosition(GreenArray[i][0], GreenArray[i][1]);
-      sleep(T1);
-      window.draw(G.GreenToken1);
-      window.display();
-    }
-    //End Display Green Token//
 
     ///////////DISPLAY////////
     window.display();
   }
   return 0;
-}
-
-void *DiceRoll(void *arg)
-{
 }
