@@ -5,9 +5,8 @@
   Section C
 */
 
-
-
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <iostream>
 #include <time.h>
 #include <vector>
@@ -26,7 +25,7 @@ using namespace sf;
 sem_t players;
 RenderWindow app;
 
-void *masterThread(void* arg);
+//void *masterThread(void* arg);
 
 //GLOBALS//
 int rollValue;
@@ -1065,7 +1064,7 @@ int main()
   int Turn = 10; //DECIDES WHOSE TURN IT IS IN THE DICE ROLLING
   sf::Time T1 = sf::seconds(0.2f);
   RenderWindow window(VideoMode(900, 900), "Ludo Game");
-  masterThread(&window);
+  //masterThread(&window);
   window.setFramerateLimit(60);
 
   //4 players
@@ -1082,8 +1081,19 @@ int main()
   Texture bg;
   bg.loadFromFile("images/board.png", sf::IntRect(15, 15, 720, 720));
   Sprite background(bg);
+
+  //Music
+  sf::Music music;
+  if (!music.openFromFile("/home/max/Documents/OSProjectFinalv1/OSProject/Audio/hello.wav"))
+  {
+    std::cout << "Error, no music." << std::endl;
+  }
+  music.play();
+  music.setVolume(100);
+
   while (window.isOpen())
   {
+
     Event e;
     while (window.pollEvent(e))
     {
@@ -1092,6 +1102,14 @@ int main()
       //DRAWING ROLL BUTTON AND ITS FUNCTION//
       auto mouse_pos = sf::Mouse::getPosition(window);          // Mouse position relative to the window
       auto translated_pos = window.mapPixelToCoords(mouse_pos); // Mouse position translated into world coordinates
+      if (e.type == Event::KeyPressed){
+        if (e.key.code == Keyboard::K){
+          music.pause();
+        }
+        if (e.key.code == Keyboard::L){
+          music.play();
+        }
+      }
       if (e.type == Event::MouseButtonPressed)
       {
 
@@ -1277,7 +1295,8 @@ int main()
                   window.draw(PB.Team.BlueToken1);
                 }
               }
-              else if (bc>0){
+              else if (bc > 0)
+              {
                 PB.MoveToken(1, rollValue);
                 if (PB.Team.Token1Location >= 45) //CHECK IF TOKEN HAS COMPLETED PATH
                 {
@@ -1382,6 +1401,7 @@ int main()
   return 0;
 }
 
+/*
 void *temp(void *arg){
   // 0 0 1 1 
   //start an sem (sem wait for dice roll)
@@ -1418,3 +1438,4 @@ void *masterThread(void* arg){
 
   //init sems here
   //Join 4 threads
+*/
