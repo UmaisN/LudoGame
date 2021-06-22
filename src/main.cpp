@@ -22,10 +22,12 @@
 
 using namespace sf;
 
-sem_t players;
+sem_t a,b,c,d;
 RenderWindow app;
 
-//void *masterThread(void* arg);
+pthread_t p1;
+pthread_t pid1,pid2,pid3,pid4;
+
 
 //GLOBALS//
 int rollValue;
@@ -1056,6 +1058,55 @@ public:
   }
 };
 
+//data structure
+struct data { 
+  Dice *pointD;
+  PlayerRed *pointPR;
+  PlayerGreen *pointPG;
+  PlayerBlue *pointPB;
+  PlayerYellow *pointPY;
+  RenderWindow *pointWindow;
+};
+
+void *playerthreading(void *arg){
+  sem_wait(&a);
+  sem_wait(&b);
+  //
+  sem_post(&a);
+  sem_wait(&c);
+  sem_wait(&d);
+  //
+  sem_post(&c);
+
+  pthread_exit(NULL);
+}
+
+void *masterThread(void *arg){
+  data *obj1 = (data*)arg;
+
+  PlayerBlue* pointB = obj1->pointPB;
+  PlayerGreen* pointG = obj1->pointPG;
+  PlayerRed* pointR = obj1->pointPR;
+  PlayerYellow* pointY = obj1->pointPY;
+
+  sem_init(&a,0,1);
+  sem_init(&b,0,1);
+  sem_init(&c,0,1);
+  sem_init(&d,0,1);
+
+  while(obj1->pointWindow->isOpen()){
+    pthread_create(&pid1,NULL,&playerthreading,(void*)pointB);
+    pthread_create(&pid2,NULL,&playerthreading,(void*)pointG);
+    pthread_create(&pid3,NULL,&playerthreading,(void*)pointR);
+    pthread_create(&pid4,NULL,&playerthreading,(void*)pointY);
+    pthread_join(pid1,NULL);
+    pthread_join(pid2,NULL);
+    pthread_join(pid3,NULL);
+    pthread_join(pid4,NULL);
+  }
+  pthread_exit(0);
+}
+
 //_______________________THE_______________________//
 //______________________MAIN________________________//
 //_____________________FUNCTION_____________________//
@@ -1064,18 +1115,27 @@ int main()
   int Turn = 10; //DECIDES WHOSE TURN IT IS IN THE DICE ROLLING
   sf::Time T1 = sf::seconds(0.2f);
   RenderWindow window(VideoMode(900, 900), "Ludo Game");
-  //masterThread(&window);
   window.setFramerateLimit(60);
-
-  //4 players
-  //sem_init(&players,0,4);
   pthread_t roller;
+
   //DECLARING CLASS VARIABLES//
   Dice D;
   PlayerRed PR;
   PlayerGreen PG;
   PlayerBlue PB;
   PlayerYellow PY;
+
+  //Masterthread
+  data* dobj = new data;
+  dobj->pointD = &D;
+  dobj->pointPB = &PB;
+  dobj->pointPG = &PG;
+  dobj->pointPR = &PR;
+  dobj->pointPY = &PY;
+  dobj->pointWindow = &window;
+
+  pthread_create(&p1,NULL,&masterThread,(void *)dobj);
+
 
   //_______________//
   Texture bg;
@@ -1319,6 +1379,8 @@ int main()
             Turn++;
             window.draw(D.DS[j]);
             window.display();
+            sem_post(&b);
+            sem_post(&d);
           }
           else
           {
@@ -1401,35 +1463,10 @@ int main()
   return 0;
 }
 
-/*
-void *temp(void *arg){
-  // 0 0 1 1 
-  //start an sem (sem wait for dice roll)
-  //sem wait if dice roll has happened 
-  //sem post dice roll
-  //sem wait board
-  //sem wait moved
-  //sem post board
 
-  //main
-  //sem post dice roll has happened in place where dice roll happens
-  //sem post if a token moves
 
-  sem_wait(&players);
-}
 
-void *masterThread(void* arg){
-  int z=0;
-  sem_init(&players,0,4);
-  pthread_t player[4];
-  for (int i =0;i<4;i++){
-    pthread_create(&player[i],NULL,&temp,(void *)z);
-  }
-  for (int i=0;i<4;i++){
-    pthread_join(player[i],NULL);
-  }
-  pthread_exit(0);
-}
+
 
   //init sems here
   //pass render Window
@@ -1438,4 +1475,3 @@ void *masterThread(void* arg){
 
   //init sems here
   //Join 4 threads
-*/
